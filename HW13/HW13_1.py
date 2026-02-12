@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, roc_auc_score, \
     roc_curve
 
@@ -26,7 +27,6 @@ print("Recall:", recall_score(y_test, y_pred))
 print("F1:", f1_score(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 y_prob = model.predict_proba(X_test)[:, 1]
-import matplotlib.pyplot as plt
 
 thresholds = np.arange(0.1, 1.0, 0.1)
 precisions, recalls = [], []
